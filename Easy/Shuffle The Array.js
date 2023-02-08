@@ -21,6 +21,9 @@ var shuffle = function(nums, n) {
 
 };
 
+console.log(shuffle(nums = [1,2,3,4,4,3,2,1], n = 4))
+
+
 // All lists are even
 // Edge: If n is 0, return an empty list
 // Edge: If n is 1, the list is 2 elements long...[x1, y1] return nums
