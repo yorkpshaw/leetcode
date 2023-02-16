@@ -36,7 +36,8 @@ var isAnagram = function(s, t) {
 // Create an objects counter for both words
 // Loop through both words
 // Initialize a key to be 0 if it doesn't exist
-// The ternary operator condition ? exprIfTrue : exprIfFalse works as follows: if condition is true, it evaluates exprIfTrue; otherwise, it evaluates exprIfFalse.
+// The ternary operator condition ? exprIfTrue : exprIfFalse works as follows:
+// if condition is true, it evaluates exprIfTrue; otherwise, it evaluates exprIfFalse.
 // If a key from the first does not exist in second, return false
 // If the key/value pairs are not the same, return false
 // Return true because all conditions passed
