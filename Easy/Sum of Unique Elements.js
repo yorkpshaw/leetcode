@@ -7,13 +7,17 @@ var sumOfUnique = function(nums) {
      const freq = {};
       let res = 0;
 
-      for (let i = 0; i < nums.length; i++) {
-        if (freq[nums[i]] === undefined) {
-          freq[nums[i]] = 1;
-        } else {
-          freq[nums[i]]++;
-        }
-      }
+    //   for (let i = 0; i < nums.length; i++) {
+    //     if (freq[nums[i]] === undefined) {
+    //       freq[nums[i]] = 1;
+    //     } else {
+    //       freq[nums[i]]++;
+    //     }
+    //   }
+
+    for (let i of nums) {
+        freq[i] = (freq[i] ? freq[i] : 0) + 1
+    }
 
       for (let i = 0; i < nums.length; i++) {
         if (freq[nums[i]] === 1) {
