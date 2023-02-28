@@ -43,3 +43,24 @@ var merge = function(nums1, m, nums2, n) {
 // while (n >= 0) {
 //     nums1[insertPos--] = (nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--];
 // }
+
+// var merge = function(nums1, m, nums2, n) {
+//     let idx1 = m - 1, idx2 = n - 1, idx3 = m + n - 1;
+//     while (idx2 >= 0) {
+//       nums1[idx3--] = nums1[idx1] > nums2[idx2]
+//         ? nums1[idx1--]
+//         : nums2[idx2--];
+//     }
+//   };
+
+// let p1 = m - 1;
+// let p2 = n - 1;
+// for (let i = nums1.length - 1; i >= 0; i--) {
+//   if (p1 >= 0 && nums1[p1] >= nums2[p2]) {
+//     nums1[i] = nums1[p1];
+//     p1--;
+//   } else if (p2 >= 0) {
+//     nums1[i] = nums2[p2];
+//     p2--;
+//   }
+// }
