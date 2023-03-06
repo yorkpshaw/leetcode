@@ -19,8 +19,8 @@ var isPalindrome = function(s) {
     }
     // };
 
-    // Time:
-    // Space:
+    // Time: O(n)
+    // Space: O(1)
     // Pseudo Code:
     // 1. Create regex to replace special characters with ""
     // 2. Create a left/start pointer
