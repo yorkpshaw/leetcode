@@ -1,0 +1,18 @@
+Linked lists, unlike arrays, do not have indices.
+
+They contain a head, tail, and length property.
+Linked lists consist of nodes
+Each node has a value and a "next" pointer to another node, or null if it is at the end
+Random access is not allowed (But they are in arrays)
+
+The head is the beginning and the tail is the end.
+
+Linked lists are like a skyscraper with no elevators, but only stairs.
+
+Head                 Tail
+[4] -> [6] -> [8] -> [2] ->
+   next   next   next   null
+
+Length:4
+
+Linked lists are good for insertion and deletion(push/pop), because everything has to be re-indexed in an array
