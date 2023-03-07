@@ -15,9 +15,17 @@ var reverseList = function(head) {
     let next = null
     let current = head
     while(current !== null) {
+        // Point next to 3?
         next = current.next;
+
+        // Set current.next (the pointer originally going to 2)
+        // to now be pointing at null (previously to left of 1)
         current.next = prev;
+
+        // prev was null, now POINTS at 1
         prev = current;
+
+        // current is now 2
         current = next;
     }
         return prev;
