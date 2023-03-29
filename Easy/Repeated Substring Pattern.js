@@ -23,3 +23,13 @@ var repeatedSubstringPattern = function(s) {
             if (pattern.repeat(s.length / pattern.length) === s) return true;
         }
         return false; */
+
+
+/*
+Set i to 1 and len to the length of string s.
+While i is less than or equal to the floor of len/2:
+a. Check if the substring of s from index 0 to index i, repeated len/i times, is equal to s.
+b. If the above condition is true, return true.
+c. Otherwise, increment i by 1 and repeat the loop.
+If the function has not yet returned, return false.
+*/
