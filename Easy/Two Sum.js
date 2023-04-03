@@ -28,17 +28,19 @@ var twoSum = function (nums, target) {
  var twoSum = function(nums, target) {
 
     let mapOfNumbers = {};
-        let twoIndexes = [];
+    let twoIndexes = [];
 
-        for (let i = 0; i < nums.length; i++) {
-        mapOfNumbers[nums[i]] = i;
+    for (let i = 0; i < nums.length; i++) {
+      mapOfNumbers[nums[i]] = i;
     }
 
     for (let i = 0; i < nums.length; i++) {
           let goal = target - nums[i];
       if(mapOfNumbers[goal] !== null && mapOfNumbers[goal] !== i) {
         twoIndexes.push(i);
-            twoIndexes.push(mapOfNumbers[goal]);
+        twoIndexes.push(mapOfNumbers[goal]);
+        break; // exit the loop as soon as a pair is found
+
       }
         }
 
