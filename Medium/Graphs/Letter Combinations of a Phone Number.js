@@ -1,23 +1,43 @@
 const L = {'2':"abc",'3':"def",'4':"ghi",'5':"jkl",
      '6':"mno",'7':"pqrs",'8':"tuv",'9':"wxyz"}
 
-var letterCombinations = function(D) {
-    let len = D.length, ans = []
-    if (!len) return []
-    const dfs = (pos, str) => {
-        if (pos === len) ans.push(str)
+var letterCombinations = function(D) { // D is the input string number
+    let len = D.length, ans = [] // Set len to the length of the string, an answer array to push into
+    if (!len) return [] // Edge case
+    const dfs = (pos, str) => { // Pos represents index of input string
+        if (pos === len) ans.push(str) // pos === len means we've touched the last digit, so push in str
         else {
-            let letters = L[D[pos]]
-            for (let i = 0; i < letters.length; i++)
-                dfs(pos+1,str+letters[i])
+            let letters = L[D[pos]] // letters = L["234"[0]], L["2"] is "abc" so letters = "abc"
+            for (let i = 0; i < letters.length; i++) // Iterate over "abc"
+                dfs(pos+1,str+letters[i]) // call dfs again. pos+1 is L["3"] = "def" on next go around
+                                          // str+letters[i] is "" + "a" then "a" + "d" then "ad" + "g"
         }
     }
     dfs(0,"")
     return ans
 };
 
+/* const L = {'2':"abc",'3':"def",'4':"ghi",'5':"jkl",
+     '6':"mno",'7':"pqrs",'8':"tuv",'9':"wxyz"}
 
-/* 
+var letterCombinations = function(D) {
+    let len = D.length, ans = []
+    if (!len) return [] // Edge case
+    const dfs = (pos, str) => { // pos is position
+        if (pos === len) ans.push(str)
+        else {
+            let letters = L[D[pos]]   // D[pos] is
+            for (let i = 0; i < letters.length; i++)
+                dfs(pos+1,str+letters[i])
+        }
+    }
+    dfs(0,"")
+    return ans
+}; */
+
+
+
+/*
 Output will be an array
 Each time a digit is pushed,
 2     3     4
