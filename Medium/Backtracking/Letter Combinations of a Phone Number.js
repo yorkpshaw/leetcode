@@ -6,35 +6,17 @@ var letterCombinations = function(D) { // D is the input string number
     if (!len) return [] // Edge case
     const dfs = (pos, str) => { // Pos represents index of input string
         if (pos === len) ans.push(str) // pos === len means we've touched the last digit, so push in str
-        else {
-            let letters = L[D[pos]] // letters = L["234"[0]], L["2"] is "abc" so letters = "abc"
+        else { // Everything inside this else block will keep running until it hits the end of the loop, then will check the base cases again
+            let letters = L[D[pos]] // letters = L["234"[0]], L["2"] is "abc" so letters = "abc" **************   D is the input string, pos is how we specifically extract a number at 'pos' index, so that we can get the letters it is mapped to 
             for (let i = 0; i < letters.length; i++) // Iterate over "abc"
-                dfs(pos+1,str+letters[i]) // call dfs again. pos+1 is L["3"] = "def" on next go around
+                dfs(pos+1,str+letters[i]) // call dfs again (which is not in the loop block). pos+1 is L["3"] = "def" on next go around. pos+1 because trying to match length base case
                                           // str+letters[i] is "" + "a" then "a" + "d" then "ad" + "g"
+                                          // pos + 1 doesn't happen until letters has fully been looped through
         }
     }
     dfs(0,"")
     return ans
 };
-
-/* const L = {'2':"abc",'3':"def",'4':"ghi",'5':"jkl",
-     '6':"mno",'7':"pqrs",'8':"tuv",'9':"wxyz"}
-
-var letterCombinations = function(D) {
-    let len = D.length, ans = []
-    if (!len) return [] // Edge case
-    const dfs = (pos, str) => { // pos is position
-        if (pos === len) ans.push(str)
-        else {
-            let letters = L[D[pos]]   // D[pos] is
-            for (let i = 0; i < letters.length; i++)
-                dfs(pos+1,str+letters[i])
-        }
-    }
-    dfs(0,"")
-    return ans
-}; */
-
 
 
 /*
@@ -70,6 +52,25 @@ Visit first letter of each number until the last, once that is completed
         Move to next digit (third to last), and recursively add all letter combos for all digits after
 
     Keep repeating the process for each digit until the first one
+
+    1 A
+    1 B
+    1 C
+    2 A D
+    2 A E
+    2 A F
+    3 A D G
+    3 A D H
+    3 A D I
+    (How does it keep adding?)
+    Length is 3, so push those 3 results into the array (How do we know the order of push?)
+    -> Call stack where pos is 2 and str is "ae"...
+        ae+h, ae+i
+    -> Call stack where pos is 1 and str is "a"...
+        a+d, a+e, a+f, etc...
+    -> Call stack where pos is 0 and str is ""...
+        ""
+
 
 
 */
