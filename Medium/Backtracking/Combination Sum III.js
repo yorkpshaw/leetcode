@@ -28,11 +28,9 @@ var combinationSum3 = function(k, n) {
             dfs(j + 1, nums, k, n - nums[j], slate);
             slate.pop();
         }
-
-    dfs(0, nums, k, n, []);
-    return result;
-
 };
+        dfs(0, nums, k, n, []);
+        return result;
 }
 
 // var combinationSum3 = function(k, n) {
