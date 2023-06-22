@@ -46,7 +46,7 @@ var combinationSum3 = function(k, n) {
 //         // base case
 //         if (slate.length === k) { // The test array is the same length as k, the number of digits we can use
 //             if (n === 0) { // If it's zero,
-//                 result.push(slate.slice()); // push a copy of the slate into the result array
+//                 result.push(slate.slice()); // push a copy of the slate into the result array, gotta slice or else you lose what's in slate
 //             }
 //             return // Found a correct combo, so stop going down that tree path
 //         }
