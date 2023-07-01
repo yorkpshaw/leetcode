@@ -40,5 +40,9 @@ i=3, undefined, so pop off 3...then [1] pop off 1
 
 
 So you pop after you've gone to the end of list
+
+When i becomes 3...loop has to stop
+pop off
+What happens to i every time we pop?
 */
 /* https://leetcode.com/problems/subsets/ */
