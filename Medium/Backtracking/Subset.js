@@ -3,9 +3,9 @@ var subsets = function(nums) {
     const result = [];
 
     const dfs = (i, nums, slate) => {
-        // Base
+
         if (i === nums.length) {
-            result.push(slate.slice());
+            result.push(slate.slice()); // There's nothing slate yet in the first go-around, so first entry is empty array
             return;
         }
 
@@ -22,9 +22,10 @@ var subsets = function(nums) {
     return result;
 };
 
+
 // var subsets = function(nums) {
 //     let result = [[]];
-    
+
 //     function backtrack(first, current) {
 //     // we iterate over the indexes i from 'first' to the length
 //     //of the entire sequence 'nums'
@@ -42,7 +43,7 @@ var subsets = function(nums) {
 //         current.pop();
 //     }
 // }
-    
+
 //     backtrack(0, []);
 //     return result
 // };
